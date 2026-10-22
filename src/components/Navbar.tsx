@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Sparkles, Menu, X, ArrowUpRight } from 'lucide-react';
+import { Sparkles, Menu, X, ArrowUpRight, Linkedin } from 'lucide-react';
 import { HERO_INFO } from '../data/portfolioData';
 import { ThemeToggle } from './ThemeToggle';
 
@@ -22,9 +22,12 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
 
   const navLinks = [
     { label: 'Work', href: '#work', id: 'work' },
+    { label: 'Experience', href: '#experience', id: 'experience' },
+    { label: 'Gallery', href: '#gallery', id: 'gallery' },
     { label: 'About', href: '#about', id: 'about' },
     { label: 'Connect', href: '#connect', id: 'connect' },
   ];
+
 
   const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
@@ -108,6 +111,19 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
             );
           })}
 
+          {/* LinkedIn Profile */}
+          <a
+            href={HERO_INFO.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-2 rounded-full text-[#4B5563] dark:text-neutral-300 hover:text-[#0A66C2] dark:hover:text-[#70B5F9] hover:bg-black/[0.04] dark:hover:bg-white/[0.06] transition-colors"
+            title="Athar Khan LinkedIn profile"
+            aria-label="Athar Khan LinkedIn profile"
+            id="nav-linkedin-link"
+          >
+            <Linkedin className="w-4 h-4" />
+          </a>
+
           {/* Theme Toggle Button */}
           <div className="pl-1 pr-1">
             <ThemeToggle />
@@ -164,12 +180,24 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
                   )}
                 </a>
               ))}
-              <a
-                href={`mailto:${HERO_INFO.email}`}
-                className="mt-2 text-center py-3 rounded-xl bg-[#D46338] dark:bg-[#E87A54] text-white font-bold text-sm shadow-sm"
-              >
-                Say Hello ({HERO_INFO.email})
-              </a>
+              <div className="pt-2 grid grid-cols-2 gap-2">
+                <a
+                  href={HERO_INFO.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="py-3 rounded-xl bg-[#0A66C2] text-white font-bold text-xs shadow-sm flex items-center justify-center space-x-1.5"
+                >
+                  <Linkedin className="w-3.5 h-3.5" />
+                  <span>LinkedIn</span>
+                </a>
+                <a
+                  href={`mailto:${HERO_INFO.email}`}
+                  className="py-3 rounded-xl bg-[#D46338] dark:bg-[#E87A54] text-white font-bold text-xs shadow-sm flex items-center justify-center space-x-1.5"
+                >
+                  <span>Say Hello</span>
+                  <ArrowUpRight className="w-3.5 h-3.5" />
+                </a>
+              </div>
             </div>
           </motion.div>
         )}

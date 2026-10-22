@@ -4,7 +4,7 @@ import { PERSONALITY_CARDS } from '../data/portfolioData';
 import { PersonalityCard } from '../types';
 import { 
   Cpu, Mic, Users, Compass, FileText, Moon, MapPin, Rocket, 
-  Sparkles, X, Info 
+  Sparkles, X, Info, ArrowUpRight, ExternalLink 
 } from 'lucide-react';
 
 export const AboutPersonality: React.FC = () => {
@@ -184,9 +184,50 @@ export const AboutPersonality: React.FC = () => {
                 {activeCard.subtitle}
               </span>
 
-              <p className="text-sm sm:text-base text-gray-600 dark:text-neutral-300 leading-relaxed mb-6 font-sans-body">
+              <p className="text-sm sm:text-base text-gray-600 dark:text-neutral-300 leading-relaxed mb-5 font-sans-body">
                 {activeCard.details}
               </p>
+
+              {activeCard.id === 'card-5' && (
+                <div className="space-y-2 mb-6">
+                  <div className="text-[10px] font-mono uppercase tracking-wider text-gray-400 dark:text-neutral-400 font-bold mb-1.5">
+                    Peer-Reviewed Publications:
+                  </div>
+                  <a
+                    href="https://link.springer.com/chapter/10.1007/978-981-97-6016-9_25"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-between p-3 rounded-2xl bg-[#F9F8F6] dark:bg-[#202020] border border-gray-200 dark:border-neutral-700 hover:border-emerald-500 dark:hover:border-emerald-400 transition-all group"
+                  >
+                    <div className="flex flex-col pr-2 min-w-0">
+                      <span className="text-[10px] uppercase font-mono font-bold text-emerald-600 dark:text-emerald-400">
+                        Springer Nature • ICAM 2024
+                      </span>
+                      <span className="text-xs font-semibold text-[#1A1A1A] dark:text-white truncate">
+                        Role of IoT in Additive Manufacturing
+                      </span>
+                    </div>
+                    <ArrowUpRight className="w-4 h-4 text-gray-400 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 flex-shrink-0 transition-colors" />
+                  </a>
+
+                  <a
+                    href="https://mrforum.com/product/9781644903438-7/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-between p-3 rounded-2xl bg-[#F9F8F6] dark:bg-[#202020] border border-gray-200 dark:border-neutral-700 hover:border-blue-500 dark:hover:border-blue-400 transition-all group"
+                  >
+                    <div className="flex flex-col pr-2 min-w-0">
+                      <span className="text-[10px] uppercase font-mono font-bold text-blue-600 dark:text-blue-400">
+                        Materials Research Forum LLC • ISME-2024
+                      </span>
+                      <span className="text-xs font-semibold text-[#1A1A1A] dark:text-white truncate">
+                        Role of ML in Air Pollution Control & Monitoring
+                      </span>
+                    </div>
+                    <ArrowUpRight className="w-4 h-4 text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 flex-shrink-0 transition-colors" />
+                  </a>
+                </div>
+              )}
 
               <button
                 onClick={() => setActiveCard(null)}

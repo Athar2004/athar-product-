@@ -1,4 +1,4 @@
-import { ProjectCaseStudy, Belief, PersonalityCard, SkillCategory, RecognitionItem } from '../types';
+import { ProjectCaseStudy, Belief, PersonalityCard, SkillCategory, RecognitionItem, GalleryItem, PublicationItem, ExperienceItem } from '../types';
 
 export const HERO_INFO = {
   name: "Athar Khan",
@@ -10,7 +10,8 @@ export const HERO_INFO = {
   supportingBio: "B.Tech CSE (IoT & Cyber Security) at LNCT (Class of 2026). Building systems where clarity, automation, and real-world user needs intersect.",
   email: "atharkhanpathaan@gmail.com",
   phone: "+91 8085618889",
-  linkedin: "https://linkedin.com/in/atharkhan",
+  linkedin: "https://www.linkedin.com/in/athar-khan-2a7b51253/",
+  linkedinHandle: "athar-khan-2a7b51253",
   portfolio: "https://atharkhan.vercel.app",
 };
 
@@ -251,7 +252,7 @@ export const PERSONALITY_CARDS: PersonalityCard[] = [
   {
     id: "card-5",
     caption: "Published researcher",
-    subtitle: "2 international papers",
+    subtitle: "Springer & MR Forum papers",
     rotation: -3.5,
     colorScheme: {
       bg: "#F0F9FF",
@@ -260,7 +261,7 @@ export const PERSONALITY_CARDS: PersonalityCard[] = [
       textColor: "#075985"
     },
     iconName: "FileText",
-    details: "Authored peer-reviewed research presented at ISME 2025 and ICAM 2024 on computational engineering and system frameworks."
+    details: "Authored peer-reviewed research published by Springer Nature (ICAM 2024, NIT Warangal) on IoT in Additive Manufacturing and Materials Research Forum LLC (ISME-2024) on ML in air quality control."
   },
   {
     id: "card-6",
@@ -341,15 +342,259 @@ export const RECOGNITION_ITEMS: RecognitionItem[] = [
     type: "Community"
   },
   {
-    title: "Published International Paper (ISME 2025)",
-    organization: "International Society of Mechanical & Systems Engineers",
-    year: "2025",
-    type: "Publication"
+    title: "Role of IoT in Additive Manufacturing",
+    organization: "Springer Nature • ICAM 2024 (NIT Warangal)",
+    year: "2024",
+    type: "Publication",
+    link: "https://link.springer.com/chapter/10.1007/978-981-97-6016-9_25",
+    doi: "10.1007/978-981-97-6016-9_25",
+    publisher: "Springer Nature",
+    description: "Lecture Notes in Mechanical Engineering. Research analyzing IoT sensors, telemetry, and automated feedback in additive manufacturing."
   },
   {
-    title: "Published Conference Paper (ICAM 2024)",
-    organization: "International Conference on Advances in Materials & Computing",
-    year: "2024",
-    type: "Publication"
+    title: "Role of Machine Learning in Air Pollution Control & Monitoring: A Recent Review",
+    organization: "Materials Research Forum LLC • ISME-2024",
+    year: "2025",
+    type: "Publication",
+    link: "https://mrforum.com/product/9781644903438-7/",
+    doi: "10.21741/9781644903438-7",
+    publisher: "Materials Research Forum LLC",
+    description: "Materials Research Proceedings (Vol. 49). Systematic review of ML predictive models (RF, SVR, ANN) for air quality management."
   }
 ];
+
+export const PUBLICATIONS: PublicationItem[] = [
+  {
+    id: "springer-iot-am",
+    title: "Role of IOT in Additive Manufacturing",
+    bookOrProceedings: "Lecture Notes in Mechanical Engineering — Recent Advances in Additive Manufacturing, Vol. 1",
+    conferenceOrVenue: "International Conference on Additive Manufacturing (ICAM 2024), NIT Warangal",
+    publisher: "Springer Nature",
+    year: "2024",
+    doi: "10.1007/978-981-97-6016-9_25",
+    url: "https://link.springer.com/chapter/10.1007/978-981-97-6016-9_25",
+    abstract: "Investigates the integration of Internet of Things (IoT) sensors, embedded telemetry, and cloud monitoring loops within additive manufacturing workflows to enable real-time defect mitigation and digital twin operations.",
+    tags: ["IoT Architectures", "Additive Manufacturing", "Smart Telemetry", "Springer Nature"],
+    role: "Researcher / Author"
+  },
+  {
+    id: "mrforum-ml-air-pollution",
+    title: "Role of Machine Learning in Air Pollution Control and Monitoring: A Recent Review",
+    bookOrProceedings: "Materials Research Proceedings, Vol. 49 (pp. 60–73)",
+    conferenceOrVenue: "Mechanical Engineering for Sustainable Development (ISME-2024)",
+    publisher: "Materials Research Forum LLC",
+    year: "2025",
+    doi: "10.21741/9781644903438-7",
+    url: "https://mrforum.com/product/9781644903438-7/",
+    abstract: "A comprehensive review examining machine learning techniques (Random Forest, SVR, ANN, XGBoost) applied to dispersion modeling, air pollutant forecasting, and real-time civic air quality monitoring.",
+    tags: ["Machine Learning", "Environmental Tech", "Data Modeling", "Materials Research Forum"],
+    role: "Researcher / Reviewer"
+  }
+];
+
+export const GALLERY_ITEMS: GalleryItem[] = [
+  {
+    id: "book-launch",
+    title: "Yi Accessibility Audit Project Book Launch",
+    description: "Launching the comprehensive report analyzing accessibility audits across 35+ buildings, assessing physical accessibility and architectural standards for differently-abled individuals.",
+    imageSrc: "/book-launch.jpeg",
+    category: "Social Impact",
+    tag: "Civic Infrastructure",
+    relatedLink: {
+      label: "Related Award",
+      href: "#skills"
+    },
+    highlight: "35+ Public & Institutional Audits"
+  },
+  {
+    id: "audit-national",
+    title: "National Award — Yi Accessibility Audit Project",
+    description: "Honored on the national stage by Thiagarajan Thirunavukkarasu (National Chair YUVA - CII Young Indians) and Sanjay Kumar Agrawal (IPS, DCP, Zone 2, Police) for spearheading accessibility impact.",
+    imageSrc: "/audit-national.jpeg",
+    category: "Honors & Awards",
+    tag: "National Recognition",
+    relatedLink: {
+      label: "View Award in Honors",
+      href: "#skills"
+    },
+    highlight: "National YUVA Award"
+  },
+  {
+    id: "audit-state",
+    title: "State Award — Yi Accessibility Audit Project",
+    description: "Conferred state-level recognition by Shri Vishwas Kailash Sarang (Minister of Co-operation), Dr. Anuj Garg (National Chair YUVA), and J.N. Chouksey (Chairman LNCT Group) for scalable civic audits.",
+    imageSrc: "/audit-state.jpeg",
+    category: "Honors & Awards",
+    tag: "State Honor",
+    relatedLink: {
+      label: "View in Milestones",
+      href: "#skills"
+    },
+    highlight: "State Ministerial Recognition"
+  },
+  {
+    id: "mun-award",
+    title: "Honored for Organizing LNCT MUN 2.0",
+    description: "Receiving recognition for successfully directing and organizing LNCT MUN 2.0, a multi-committee conference fostering diplomacy, high-stakes parliamentary debate, and student leadership.",
+    imageSrc: "/mun-award.jpeg",
+    category: "Honors & Awards",
+    tag: "Diplomacy & Leadership",
+    highlight: "Flagship Multi-Committee Event"
+  },
+  {
+    id: "achix",
+    title: "Growth & Opportunities Session at Achieve X Club",
+    description: "Delivering an interactive mentorship session at Achieve X Club, guiding fellow students and juniors on career development, practical product thinking, and growth opportunities.",
+    imageSrc: "/achix.jpeg",
+    category: "Community & Leadership",
+    tag: "Mentorship & Growth",
+    highlight: "Youth Mentorship"
+  },
+  {
+    id: "techvilla-award",
+    title: "Outstanding Contribution — TechVilla Coding Club",
+    description: "Awarded for exceptional leadership and operational execution in organizing flagship university hackathons and competitive programming contests, CodeBeta 1.0 & 2.0.",
+    imageSrc: "/techvilla-award.jpeg",
+    category: "Community & Leadership",
+    tag: "Tech Leadership",
+    highlight: "CodeBeta 1.0 & 2.0 Lead"
+  },
+  {
+    id: "icam-talk",
+    title: "Talk at ICAM 2024 — NIT Warangal",
+    description: "Delivering an international research presentation on the Role of IoT in Additive Manufacturing at the ICAM 2024 International Conference, NIT Warangal. Chapter published by Springer Nature.",
+    imageSrc: "/icam-talk.jpeg",
+    category: "Speaking & Conferences",
+    tag: "Springer Nature Paper",
+    relatedLink: {
+      label: "Read Springer Paper",
+      href: "https://link.springer.com/chapter/10.1007/978-981-97-6016-9_25"
+    },
+    highlight: "Published in Springer Nature"
+  },
+  {
+    id: "mun-talk",
+    title: "Guest of Honour — LNCT MUN Opening Ceremony",
+    description: "Delivering the introductory keynote speech as Guest of Honour at the grand opening ceremony of the Model United Nations Conference, addressing 400+ delegates.",
+    imageSrc: "/mun-talk.jpeg",
+    category: "Speaking & Conferences",
+    tag: "Keynote Address",
+    highlight: "Opening Ceremony Keynote"
+  },
+  {
+    id: "techvilla-orientation",
+    title: "TechVilla Coding Club Orientation",
+    description: "Leading the flagship orientation session for TechVilla, introducing incoming engineering cohorts to software craft, open-source culture, and collaborative community building.",
+    imageSrc: "/techvilla-orientation.jpeg",
+    category: "Community & Leadership",
+    tag: "Community Building",
+    highlight: "3,000+ Member Community"
+  }
+];
+
+export const EXPERIENCES: ExperienceItem[] = [
+  {
+    id: "asbl-pm-intern",
+    company: "ASBL",
+    companyFull: "Ashoka Builders India Pvt. Ltd.",
+    companyDescription: "Premier real estate & proptech developer in Hyderabad pioneering tech-driven construction planning, customer-centric architecture, and intelligent high-rise communities.",
+    role: "Product Management Intern",
+    employmentType: "ASBL · Internship",
+    period: "Aug 2025 - Present",
+    duration: "1 yr 3 mos",
+    workplaceType: "In office",
+    location: "Hyderabad, India",
+    isCurrent: true,
+    logo: {
+      src: "/asbl-logo.svg",
+      darkSrc: "/asbl-white-logo.webp",
+      alt: "ASBL Official Logo"
+    },
+    summary: "Spearheading internal tool digitization and process engineering across high-value construction procurement, vendor lifecycle governance, and multi-site project operations in Hyderabad.",
+    keyContributions: [
+      {
+        title: "RFQ Procurement Engine",
+        description: "Built an end-to-end Request for Quotation platform replacing chaotic WhatsApp, phone, and spreadsheet follow-ups across high-value materials procurement.",
+        metric: "Turnaround dropped from 6 days to 2 (-67%) • Vendor bid participation climbed 40% → 85%"
+      },
+      {
+        title: "Centralized Contractor Vault & RBAC",
+        description: "Architected a single-source-of-truth vendor repository with automated GSTIN validation, financial ledger verification, and multi-tier role-based access control protecting sensitive banking data across 9+ live construction projects.",
+        metric: "Evaluation time cut from 2+ hours to 15 mins • 100% compliance across 9 sites"
+      },
+      {
+        title: "Ground-Level User Research & Adoption",
+        description: "Conducted ethnographic field research with 40+ Tier-1/Tier-2 suppliers and site managers, delivering zero-install mobile magic-link quote submissions tailored for site engineers.",
+        metric: "Procurement managers saved 11.5+ hours weekly on quote reconciliation"
+      }
+    ],
+    skillsAndTools: [
+      "Product Strategy",
+      "Process Engineering",
+      "B2B SaaS",
+      "RFQ Workflows",
+      "RBAC Architecture",
+      "Field User Research",
+      "Spend Analytics",
+      "Figma"
+    ],
+    relatedCaseStudyIds: [
+      { id: "rfq-system-asbl", title: "RFQ Procurement Engine" },
+      { id: "vendor-library-asbl", title: "Vendor & Contractor Library" }
+    ],
+    websiteUrl: "https://asbl.in",
+    accentColor: "#D46338"
+  },
+  {
+    id: "tryidol-pm-intern",
+    company: "Tryidol Technologies",
+    companyFull: "Tryidol Technologies Pvt. Ltd.",
+    companyDescription: "Software engineering and digital technology consulting firm based in Bhopal, delivering custom multi-tenant enterprise applications, web platforms, and automated workflow systems.",
+    role: "Project Management Intern",
+    employmentType: "Tryidol Technologies · Internship",
+    period: "Jan 2025 - Jun 2025",
+    duration: "6 mos",
+    workplaceType: "In office",
+    location: "Bhopal, Madhya Pradesh, India",
+    isCurrent: false,
+    logo: {
+      src: "/tryidol-logo.png",
+      alt: "Tryidol Technologies Official Logo"
+    },
+    summary: "Directed agile sprint execution, client roadmaps, and cross-functional engineering handoffs for multi-tenant enterprise software and bespoke web applications.",
+    keyContributions: [
+      {
+        title: "Agile Sprint Delivery & ERP Rollout",
+        description: "Managed sprint planning, backlog grooming, and milestone burndown for a multi-tenant client ERP suite spanning HR, Inventory, Finance, and Procurement, achieving 100% on-time client handoffs across 4 organizations.",
+        metric: "100% on-time milestone delivery across 4 enterprise rollouts"
+      },
+      {
+        title: "Cross-Functional Bridge & Stakeholder Management",
+        description: "Led daily standups, sprint retrospectives, and client demo sessions, translating ambiguous business requirements into high-clarity PRDs, user stories, and testable acceptance criteria.",
+        metric: "40% reduction in revision cycles through unambiguous functional specs"
+      },
+      {
+        title: "AI-Assisted Workflow Integration",
+        description: "Scoped and coordinated engineering delivery of contextual generative AI drafting tools within the HR module for candidate evaluation summaries, job descriptions, and offer packets.",
+        metric: "75% faster HR drafting • Consolidated 4 disparate tools into 1 suite"
+      }
+    ],
+    skillsAndTools: [
+      "Agile & Scrum",
+      "Sprint Planning",
+      "Client Roadmap Delivery",
+      "Functional Specifications",
+      "Scope & Risk Management",
+      "Cross-Functional Alignment",
+      "JIRA / Trello",
+      "Enterprise ERP"
+    ],
+    relatedCaseStudyIds: [
+      { id: "ai-erp-tryidol", title: "AI-Powered Enterprise ERP" }
+    ],
+    websiteUrl: "https://tryidoltech.com",
+    accentColor: "#0D9488"
+  }
+];
+
+

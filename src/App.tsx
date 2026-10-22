@@ -9,6 +9,8 @@ import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { BeliefsSection } from './components/BeliefsSection';
 import { WorkSection } from './components/WorkSection';
+import { ExperienceSection } from './components/ExperienceSection';
+import { GallerySection } from './components/GallerySection';
 import { AboutPersonality } from './components/AboutPersonality';
 import { SkillsRecognition } from './components/SkillsRecognition';
 import { ConnectFooter } from './components/ConnectFooter';
@@ -19,7 +21,7 @@ function AppContent() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['hero', 'beliefs', 'work', 'about', 'skills', 'connect'];
+      const sections = ['hero', 'beliefs', 'work', 'experience', 'gallery', 'about', 'skills', 'connect'];
       const scrollPosition = window.scrollY + 200;
 
       for (const sectionId of sections) {
@@ -28,7 +30,7 @@ function AppContent() {
           const top = el.offsetTop;
           const height = el.offsetHeight;
           if (scrollPosition >= top && scrollPosition < top + height) {
-            // Map sub-sections to the 3 main nav anchors if needed
+            // Map sub-sections to the main nav anchors if needed
             if (sectionId === 'beliefs') {
               setActiveSection('hero');
             } else if (sectionId === 'skills') {
@@ -56,6 +58,8 @@ function AppContent() {
         <Hero />
         <BeliefsSection />
         <WorkSection />
+        <ExperienceSection />
+        <GallerySection />
         <AboutPersonality />
         <SkillsRecognition />
       </main>

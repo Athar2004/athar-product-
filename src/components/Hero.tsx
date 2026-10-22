@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
-import { ArrowDown, MapPin, Clock, Briefcase, Sparkles, Send, Copy, Check } from 'lucide-react';
+import { ArrowDown, MapPin, Clock, Briefcase, Sparkles, Send, Copy, Check, Linkedin, ArrowUpRight } from 'lucide-react';
 import { HERO_INFO } from '../data/portfolioData';
 import { AbstractArtwork } from './AbstractArtwork';
 
@@ -97,10 +97,18 @@ export const Hero: React.FC = () => {
                 transition={{ duration: 0.5 }}
                 className="flex flex-wrap items-center gap-3 mb-6"
               >
-                <div className="px-3.5 py-1 bg-white dark:bg-[#181818] border border-gray-200/80 dark:border-neutral-700 rounded-full text-[10px] font-bold uppercase tracking-widest flex items-center gap-2 text-[#1A1A1A] dark:text-neutral-200 shadow-2xs">
+                <a
+                  href="#experience"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.querySelector('#experience')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                  className="px-3.5 py-1 bg-white dark:bg-[#181818] border border-gray-200/80 dark:border-neutral-700 rounded-full text-[10px] font-bold uppercase tracking-widest flex items-center gap-2 text-[#1A1A1A] dark:text-neutral-200 shadow-2xs hover:border-[#D46338]/60 transition-colors cursor-pointer group"
+                  title="View ASBL Product Management Experience"
+                >
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                  <span>PM Intern @ ASBL</span>
-                </div>
+                  <span className="group-hover:text-[#D46338] dark:group-hover:text-[#E87A54] transition-colors">PM Intern @ ASBL</span>
+                </a>
 
                 <div className="text-[10px] font-mono font-medium text-gray-500 dark:text-neutral-400 uppercase tracking-widest px-2.5 py-1 rounded-full bg-white/60 dark:bg-[#181818]/60 border border-black/[0.04] dark:border-white/[0.06]">
                   {istTime || 'IST GMT +5:30'}
@@ -209,20 +217,81 @@ export const Hero: React.FC = () => {
                     </>
                   )}
                 </button>
+
+                <a
+                  href={HERO_INFO.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-6 py-4 rounded-full bg-white dark:bg-[#181818] border border-gray-200 dark:border-neutral-700 text-sm font-bold text-[#0A66C2] dark:text-[#70B5F9] hover:bg-[#0A66C2] hover:text-white dark:hover:bg-[#0A66C2] dark:hover:text-white hover:border-[#0A66C2] dark:hover:border-[#0A66C2] transition-all duration-300 shadow-2xs flex items-center gap-2 group"
+                  id="hero-cta-linkedin"
+                >
+                  <Linkedin className="w-4 h-4 transition-transform group-hover:scale-110" />
+                  <span>LinkedIn</span>
+                  <ArrowUpRight className="w-3.5 h-3.5 opacity-60 group-hover:opacity-100 transition-opacity" />
+                </a>
               </motion.div>
             </div>
 
-            {/* Right Column: Editorial Visual Card */}
+            {/* Right Column: Editorial Visual Card with Athar's Portrait */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.7, delay: 0.3 }}
               className="lg:col-span-4 flex justify-center lg:justify-end"
             >
-              <div className="w-full max-w-sm">
-                <AbstractArtwork type="hero" accentColor="#D46338" />
+              <div className="w-full max-w-sm relative">
+                {/* Ambient soft glow */}
+                <div 
+                  className="absolute inset-0 rounded-3xl opacity-25 dark:opacity-35 blur-2xl transform scale-95 pointer-events-none"
+                  style={{ background: 'radial-gradient(circle at 50% 50%, #D46338 0%, transparent 70%)' }}
+                />
+
+                <div className="relative z-10 w-full rounded-3xl bg-white/95 dark:bg-[#181818]/95 backdrop-blur-md p-4 sm:p-5 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.08)] dark:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.6)] border border-gray-200/90 dark:border-neutral-800 flex flex-col overflow-hidden">
+                  {/* Top card header */}
+                  <div className="flex items-center justify-between pb-3 mb-3 border-b border-gray-100 dark:border-neutral-800">
+                    <div className="flex space-x-1.5">
+                      <div className="w-2.5 h-2.5 rounded-full bg-[#D46338]" />
+                      <div className="w-2.5 h-2.5 rounded-full bg-[#0D9488]" />
+                      <div className="w-2.5 h-2.5 rounded-full bg-[#D97706]" />
+                    </div>
+                    <span className="text-[10px] font-mono tracking-widest text-[#9CA3AF] dark:text-neutral-400 uppercase font-bold">
+                      PRODUCT LEADER // 2026
+                    </span>
+                  </div>
+
+                  {/* Athar's Photo */}
+                  <div className="relative aspect-[4/4.5] w-full rounded-2xl overflow-hidden bg-neutral-100 dark:bg-neutral-900 border border-black/[0.04] dark:border-white/[0.06]">
+                    <img 
+                      src="/pic.png" 
+                      alt="Athar Khan" 
+                      className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent p-4 flex items-end justify-between">
+                      <div>
+                        <span className="text-white text-sm font-bold block leading-tight font-sans">Athar Khan</span>
+                        <span className="text-white/80 text-[11px] font-mono">Product Management</span>
+                      </div>
+                      <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse mb-1" />
+                    </div>
+                  </div>
+
+                  {/* Micro caption footer */}
+                  <div className="pt-3 mt-3 flex items-center justify-between text-[11px] font-mono text-gray-500 dark:text-neutral-400 border-t border-gray-100 dark:border-neutral-800">
+                    <span className="flex items-center gap-1.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#D46338]" />
+                      Systems • Research • Scale
+                    </span>
+                    <a 
+                      href="#gallery" 
+                      className="text-[#D46338] dark:text-[#E87A54] font-bold hover:underline"
+                    >
+                      Gallery →
+                    </a>
+                  </div>
+                </div>
               </div>
             </motion.div>
+
 
           </div>
 

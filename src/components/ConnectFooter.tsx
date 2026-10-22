@@ -133,6 +133,18 @@ export const ConnectFooter: React.FC = () => {
                   </>
                 )}
               </button>
+
+              <a
+                href={HERO_INFO.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center space-x-2 px-6 py-4 rounded-full bg-[#0A66C2]/20 hover:bg-[#0A66C2] text-[#70B5F9] hover:text-white border border-[#0A66C2]/40 text-xs font-mono font-bold transition-all duration-200 shadow-md group"
+                id="footer-linkedin-btn"
+              >
+                <Linkedin className="w-4 h-4 transition-transform group-hover:scale-110" />
+                <span>LinkedIn Profile</span>
+                <ArrowUpRight className="w-3.5 h-3.5 opacity-70 group-hover:opacity-100" />
+              </a>
             </div>
           </div>
 
@@ -205,10 +217,10 @@ export const ConnectFooter: React.FC = () => {
               href={HERO_INFO.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-white transition-colors flex items-center space-x-1.5"
+              className="hover:text-white transition-colors flex items-center space-x-1.5 group"
             >
-              <Linkedin className="w-3.5 h-3.5" />
-              <span>LinkedIn</span>
+              <Linkedin className="w-3.5 h-3.5 text-[#0A66C2] group-hover:text-white transition-colors" />
+              <span>linkedin.com/in/athar-khan-2a7b51253</span>
             </a>
             <a
               href={HERO_INFO.portfolio}
